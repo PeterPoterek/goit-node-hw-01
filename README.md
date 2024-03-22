@@ -31,7 +31,3 @@ node index.js --action remove --id qdggE76Jtbfd9eWJHrssH
 ```
 
 ![image](https://github.com/PeterPoterek/goit-node-hw-01/assets/86746994/c986b487-c502-4d18-96d7-39dab5df19ae)
-
-```
-
-```
