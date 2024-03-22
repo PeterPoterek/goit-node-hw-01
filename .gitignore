@@ -1,0 +1,23 @@
+# Dependency directories
+node_modules/
+
+# Optional npm debugging logs
+npm-debug.log
+
+# OS or Editor files
+.DS_Store
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*~
+*.log
+.idea/
+
+# Environment variables
+.env
+
+# Production build output directory
+dist/
