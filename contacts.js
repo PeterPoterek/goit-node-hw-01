@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { uuid } = require("uuidv4");
+const { v4 } = require("uuid");
 
 const contactsPath = path.join(__dirname, "db", "contacts.json");
 
@@ -11,7 +11,8 @@ const listContacts = () => {
         console.error("Error reading contacts file:", err);
         return;
       }
-      console.log(data);
+      const contacts = JSON.parse(data);
+      console.table(contacts);
       return data;
     });
   } catch (err) {
@@ -69,7 +70,7 @@ const addContact = (name, email, phone) => {
 
       let contacts = JSON.parse(data);
 
-      let id = uuid();
+      let id = v4();
 
       const newContactId = id.replace(/-/g, "").substring(0, 20);
 
