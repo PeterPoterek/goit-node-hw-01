@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { uuid } = require("uuidv4");
 
 const contactsPath = path.join(__dirname, "db", "contacts.json");
 
@@ -50,7 +51,7 @@ const removeContact = (contactId) => {
           console.error(err);
           return;
         }
-        console.log("Contact removed successfully.");
+        console.log("Contact removed");
       });
     });
   } catch (err) {
@@ -58,7 +59,35 @@ const removeContact = (contactId) => {
   }
 };
 
-function addContact(name, email, phone) {
-  // ...your code
-}
+const addContact = (name, email, phone) => {
+  try {
+    fs.readFile(contactsPath, "utf8", (err, data) => {
+      if (err) {
+        console.error("Error reading contacts file:", err);
+        return;
+      }
+
+      let contacts = JSON.parse(data);
+
+      let id = uuid();
+
+      const newContactId = id.replace(/-/g, "").substring(0, 20);
+
+      const newContact = { id: newContactId, name, email, phone };
+
+      contacts.push(newContact);
+
+      fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2), (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log("Contact added");
+      });
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 module.exports = { listContacts, getContactById, removeContact, addContact };

@@ -1,3 +1,3 @@
 const { listContacts, getContactById, removeContact, addContact } = require("./contacts");
 
-getContactById("Z5sbDlS7pCzNsnAHLtDJd");
+addContact("Mango", "mango@gmail.com ", "322-22-22");
