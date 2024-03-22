@@ -11,15 +11,30 @@ const listContacts = () => {
         return;
       }
       console.log(data);
+      return data;
     });
   } catch (err) {
     console.error("Error in listContacts:", err);
   }
 };
 
-function getContactById(contactId) {
-  // ...your code
-}
+const getContactById = (contactId) => {
+  try {
+    fs.readFile(contactsPath, "utf8", (err, data) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      const contacts = JSON.parse(data);
+      const contact = contacts.find((contact) => contact.id === contactId);
+      console.log(contact);
+
+      return contact;
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 function removeContact(contactId) {
   // ...your code
