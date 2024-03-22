@@ -14,20 +14,24 @@ node index.js --action list
 node index.js --action get --id 05olLMgyVQdWRwgKfg5J6
 ```
 
-## add
-
 ![image](https://github.com/PeterPoterek/goit-node-hw-01/assets/86746994/99421662-26bd-44c3-ac66-3fbfef945d32)
+
+## add
 
 ```bash
 node index.js --action add --name Mango --email mango@gmail.com --phone 322-22-22
 ```
 
-## remove
-
 ![image](https://github.com/PeterPoterek/goit-node-hw-01/assets/86746994/31937910-afb9-439e-8a05-496cc8fa7d5d)
+
+## remove
 
 ```bash
 node index.js --action remove --id qdggE76Jtbfd9eWJHrssH
 ```
 
 ![image](https://github.com/PeterPoterek/goit-node-hw-01/assets/86746994/c986b487-c502-4d18-96d7-39dab5df19ae)
+
+```
+
+```
