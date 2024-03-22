@@ -36,9 +36,27 @@ const getContactById = (contactId) => {
   }
 };
 
-function removeContact(contactId) {
-  // ...your code
-}
+const removeContact = (contactId) => {
+  try {
+    fs.readFile(contactsPath, "utf8", (err, data) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      let contacts = JSON.parse(data);
+      contacts = contacts.filter((contact) => contact.id !== contactId);
+      fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2), (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log("Contact removed successfully.");
+      });
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 function addContact(name, email, phone) {
   // ...your code
