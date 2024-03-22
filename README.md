@@ -11,3 +11,9 @@ node index.js --action get --id 05olLMgyVQdWRwgKfg5J6
 ```
 
 ![image](https://github.com/PeterPoterek/goit-node-hw-01/assets/86746994/99421662-26bd-44c3-ac66-3fbfef945d32)
+
+```bash
+node index.js --action add --name Mango --email mango@gmail.com --phone 322-22-22
+```
+
+![image](https://github.com/PeterPoterek/goit-node-hw-01/assets/86746994/31937910-afb9-439e-8a05-496cc8fa7d5d)
